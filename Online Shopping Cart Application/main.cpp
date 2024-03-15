@@ -37,9 +37,10 @@ int main() {
 			if (user_action == 0) {
 				cout << "Closing Program...\n";
 			}
-			else if (user_action < 1 || user_action > size(available_items)) {
-				cout << "Entered number is invalid. It is outside of shop item number range. \nTry Again.\n\n";
-			}
+			else if (user_action < 1 || user_action > available_items.size()) {
+                cout << "Entered number is invalid. It is outside of shop item number range. \nTry Again.\n\n";
+            }
+
 		} while (user_action != 0);
 	}
 }
