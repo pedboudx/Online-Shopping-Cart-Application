@@ -26,7 +26,7 @@ int main() {
 
 		vector<Item*> available_items = createShop(); // Creates a vector array of Items and populates it with the items that are up for sale
 		vector<Item*> cart_items;
-		int user_action;
+		int user_action = 789; // 789 is the default user_action
 		viewItemList(available_items); // Prints out list of available Items for the user to see
 
 		do { 
@@ -42,12 +42,30 @@ int main() {
             }
 			else if (user_action <= available_items.size() && user_action >= 1){ //View Item goes in here
 
-				cout << "viewing " << user_action << "item\n"; // Temp line
+				cout << "viewing " << user_action << "item\n"; // Temporary Line
+				viewItem( user_action, available_items);
+				char item_action =' ';
 
-				// Show item and its details and stuff {
-					// 
-				//}
+				while (item_action != 'E'); {
+					
+					cout << "If you would like to add Item " << user_action << " to your cart enter X\nIf you'd like to go back enter E";
+					cin >> item_action;
 
+					if (item_action != 'E' && item_action != 'X') {
+
+						cout << "Entered input is invalid. Not a valid option. Try Again \n";
+						item_action = ' ';
+
+					} else if (item_action == 'X') {
+
+						cart_items.push_back(available_items[user_action -1]);
+						cout << "Item successfully added to cart. " << endl;
+						user_action = 789;
+						item_action = 'E';
+
+					}
+
+				}
 			}
 
 		} while (user_action != 0);

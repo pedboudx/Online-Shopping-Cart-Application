@@ -35,12 +35,18 @@ void viewItemList(vector<Item*> _available_items) {
     for (const auto& item : _available_items) {
         cout << "Item #: " << index + 1 << endl;
         item->print();
+        cout << endl;
         index++;
     }
 
 }
 
-void viewItem(int itemIndex) {
+void viewItem(int itemIndex, vector <Item*> _available_items) {
+    cout << "\n\nDetails of Item #" << itemIndex << ":\n\n";
+    _available_items[itemIndex-1]->print();
+    cout << "Description: ";\
+    _available_items[itemIndex-1]->getDescription();
+    cout << "\n\n";
 
 }
 
