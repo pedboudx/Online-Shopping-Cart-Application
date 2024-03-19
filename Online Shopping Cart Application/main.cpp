@@ -40,6 +40,15 @@ int main() {
 			else if (user_action < 1 || user_action > available_items.size()) {
                 cout << "Entered number is invalid. It is outside of shop item number range. \nTry Again.\n\n";
             }
+			else if (user_action <= available_items.size() && user_action >= 1){ //View Item goes in here
+
+				cout << "viewing " << user_action << "item\n"; // Temp line
+
+				// Show item and its details and stuff {
+					// 
+				//}
+
+			}
 
 		} while (user_action != 0);
 	}
