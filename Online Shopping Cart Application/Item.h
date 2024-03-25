@@ -4,7 +4,7 @@
 using namespace std;
 
 //Hey I made a change -Aadesh // Noted - Pedro 
-// 123 123 123 mithun sucks 123\// yeah i do i suck ballsack
+// 123 123 123 mithun sucks 123
 
 class Item
 {
@@ -26,8 +26,8 @@ public:
 		description = _description;
 	}
 
-	string getDescription() {
-		return description;	
+	void getDescription() {
+		cout << description;
 	}
 
 	void setDescription(string _description) {
