@@ -78,7 +78,6 @@ public:
 
 	void print() override {
 		cout << "Item Name: " << getName() << "\nPrice: " << getPrice() << "\nColour: " << colour << endl;
-		cout << endl;
 	}
 
 };
@@ -110,7 +109,6 @@ public:
 
 	void print() override {
 		cout << "Item Name: " << getName() << "\nPrice: " << getPrice() << "\nType: " << type << endl;
-		cout << endl;
 
 	}
 
@@ -143,7 +141,6 @@ public:
 
 	void print() override {
 		cout << "Item Name: " << getName() << "\nPrice: " << getPrice() << "\nMaterial: " << material << endl;
-		cout << endl;
 
 	}
 

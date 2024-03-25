@@ -27,20 +27,73 @@ int main() {
 		vector<Item*> available_items = createShop(); // Creates a vector array of Items and populates it with the items that are up for sale
 		vector<Item*> cart_items;
 		int user_action;
+		char go_to_cart = ' ';
 		viewItemList(available_items); // Prints out list of available Items for the user to see
 
 		do { 
 
-			cout << "Enter Item # to view more information. \nEnter 0 to close the program.\n";
+			cout << "\nEnter Item # to view more information. \nEnter 0 to close the program.\nEnter -1 to proceed to cart.\n";
 			cin >> user_action;
 
-			if (user_action == 0) {
+			if (user_action == 0) { // Exit Program
 				cout << "Closing Program...\n";
 			}
-			else if (user_action < 1 || user_action > available_items.size()) {
+			
+			else if (user_action <= available_items.size() && user_action > 0){ // View Item Tree
+				
+				// This is where the main program and stuff starts
+				int cart_action = 0;
+				viewItem((user_action-1), available_items);
+				cout << "Would you like to add this item to your cart?" << endl;
+				cout << "Enter 1 to add item to cart.\n" << "Enter 0 to go back to item list.\n";
+				cin >> cart_action;
+
+				if (cart_action == 1) {
+
+					cart_items.push_back(available_items[user_action-1]);
+					cout << "Item successfully added to cart.\n";
+					cout << "Enter X to view contents of your cart.\nEnter N to go back to available item list without viewing cart contents.\n";
+					cin >> go_to_cart;
+
+					if (go_to_cart == 'X') {
+
+						cout << "Cart Items: ";
+						viewItemList(cart_items);
+						cout << "\nEnd of Cart Items.\n\n";
+
+					}else if (go_to_cart == 'N'){
+
+						cout << "\n\nRegenerating Available Item List: \n\n";
+						viewItemList(available_items);
+						go_to_cart = ' ';
+
+					}
+				}
+			}
+
+			else if (user_action == -1) { // Going to Cart Tree
+				
+				printReceipt(cart_items);
+				char print_receipt = ' ';
+
+				cout << "Would you like to continue shopping or print the receipt?" << endl;
+				cout << "Enter X to print the receipt and exit the program.\nEnter N to continue shopping.\n";
+
+				if (print_receipt == 'X') {
+					// add receipt printing functionality here
+					cout << "Printing the receipt. \n";
+				}
+
+			}
+
+			else if (user_action < 1 || user_action > available_items.size()) { // Input outside of range
                 cout << "Entered number is invalid. It is outside of shop item number range. \nTry Again.\n\n";
             }
+
+
+
 
 		} while (user_action != 0);
 	}
 }
+
