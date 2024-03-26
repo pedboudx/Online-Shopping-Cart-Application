@@ -3,145 +3,165 @@
 #include <string>
 using namespace std;
 
-//Hey I made a change -Aadesh // Noted - Pedro 
-// 123 123 123 mithun sucks 123\// yeah i do i suck ballsack
-
 class Item
 {
-private: 
+private:
 	string name;
 	double price;
 	string description;
 
 public:
-	Item() {
+	Item()
+	{
 		name = "";
 		price = 0;
 		description = "";
 	}
 
-	Item(string _name, double _price, string _description) {
+	Item(string _name, double _price, string _description)
+	{
 		name = _name;
 		price = _price;
 		description = _description;
 	}
 
-	string getDescription() {
-		return description;	
+	string getDescription()
+	{
+		return description;
 	}
 
-	void setDescription(string _description) {
+	void setDescription(string _description)
+	{
 		description = _description;
 	}
 
-	string getName() {
+	string getName()
+	{
 		return name;
 	}
-	double getPrice() {
+
+	double getPrice()
+	{
 		return price;
 	}
-	void setName(string _name) {
+
+	void setName(string _name)
+	{
 		name = _name;
 	}
-	void setPrice(double _price) {
-		 price = _price;
+
+	void setPrice(double _price)
+	{
+		price = _price;
 	}
 
-	virtual void print() {
+	virtual void print()
+	{
 		cout << "Item Name: " << name << "\nPrice: " << price << endl;
 	}
 };
 
-class CutleryKit : public Item {
+class CutleryKit : public Item
+{
 private:
 	string colour;
 
 public:
-	CutleryKit() {
+	CutleryKit()
+	{
 		colour = "";
 	}
+
 	CutleryKit(string _name, double _price, string _colour, string _description)
-	{ 
+	{
 		setName(_name);
 		setPrice(_price);
 		colour = _colour;
 		setDescription(_description);
 	}
 
-	void setColour(string _colour) {
+	void setColour(string _colour)
+	{
 		colour = _colour;
 	}
 
-	string getColour() {
+	string getColour()
+	{
 		return colour;
 	}
 
-	void print() override {
+	void print() override
+	{
 		cout << "Item Name: " << getName() << "\nPrice: " << getPrice() << "\nColour: " << colour << endl;
 	}
-
 };
 
-class Appliance : public Item {
+class Appliance : public Item
+{
 private:
 	string type;
 
 public:
-	Appliance() {
+	Appliance()
+	{
 		type = "";
 	}
+
 	Appliance(string _name, double _price, string _colour, string _description)
 	{
 		setName(_name);
 		setPrice(_price);
 		type = _colour;
 		setDescription(_description);
-
 	}
 
-	void setType(string _type) {
+	void setType(string _type)
+	{
 		type = _type;
 	}
 
-	string getType() {
+	string getType()
+	{
 		return type;
 	}
 
-	void print() override {
+	void print() override
+	{
 		cout << "Item Name: " << getName() << "\nPrice: " << getPrice() << "\nType: " << type << endl;
-
 	}
-
 };
 
-class DishSet : public Item {
+class DishSet : public Item
+{
 private:
 	string material;
 
 public:
-	DishSet() {
+	DishSet()
+	{
 		material = "";
 	}
+
 	DishSet(string _name, double _price, string _material, string _description)
 	{
 		setName(_name);
 		setPrice(_price);
 		material = _material;
 		setDescription(_description);
-
 	}
 
-	void setMaterial(string _material) {
+	void setMaterial(string _material)
+	{
 		material = _material;
 	}
 
-	string getMaterial() {
+	string getMaterial()
+	{
 		return material;
 	}
 
-	void print() override {
+	void print() override
+	{
 		cout << "Item Name: " << getName() << "\nPrice: " << getPrice() << "\nMaterial: " << material << endl;
-
 	}
-
 };
