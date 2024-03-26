@@ -1,0 +1,6 @@
+ItemPrice
+Stainless Steel Cutlery Set14.99
+Toaster39.99
+SUBTOTAL:54.98
+HST:7.1474
+TOTAL:62.1274

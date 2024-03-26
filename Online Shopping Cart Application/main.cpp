@@ -17,6 +17,7 @@ int main()
 		cout << "Welcome to our C++ Online Shopping Cart Console Application! \nWould you like to proceed? (Y/N)" << endl;
 		cin >> go_to_main_program;
 		go_to_main_program = toupper(go_to_main_program);
+		
 	} while (go_to_main_program != 'Y' && go_to_main_program != 'N');
 
 	// If user chooses not to proceed, closes the application
@@ -85,7 +86,7 @@ int main()
 			else if (user_action == -1)
 			{ // Going to Cart Tree
 
-				printReceipt(cart_items);
+				showReceipt(cart_items);
 				char print_receipt = ' ';
 
 				cout << "Would you like to continue shopping or print the receipt?" << endl;
@@ -96,6 +97,8 @@ int main()
 				{
 					// add receipt printing functionality here
 					cout << "Printing the receipt. \n";
+					printReceipt(cart_items);
+					
 					user_action = 0;
 				}
 				else

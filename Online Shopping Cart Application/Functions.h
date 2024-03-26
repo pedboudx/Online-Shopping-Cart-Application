@@ -4,6 +4,8 @@
 #include <vector>
 #include <string>
 #include <iomanip>
+#include <fstream>
+
 using namespace std;
 
 vector<Item *> createShop()
@@ -68,7 +70,7 @@ double calculateTotalPrice(vector<Item *> &cart_items)
     return totalPrice;
 }
 
-void printReceipt(vector<Item *> &cart_items)
+void showReceipt(vector<Item *> &cart_items)
 {
     cout << "Viewing Cart Contents: \n\n";
     viewItemList(cart_items);
@@ -77,4 +79,30 @@ void printReceipt(vector<Item *> &cart_items)
     cout << setprecision(4) << "SUBTOTAL: " << calculateTotalPrice(cart_items);
     cout << setprecision(4) << "\nHST: " << calculateTotalPrice(cart_items) * 0.13;
     cout << setprecision(4) << "\nTOTAL: " << calculateTotalPrice(cart_items) * 1.13 << "\n\n";
+}
+
+void printReceipt(vector<Item*> &cart_items) 
+{
+    ofstream Receipt("printed_receipt.txt");
+
+    if (!Receipt)
+    {
+        cout << "printReceipt function broken.\n";
+    } 
+    else 
+    {
+        Receipt << "Item" << "Price" << endl;
+
+        for (const auto &item : cart_items) 
+        {
+            Receipt << item->getName() << item->getPrice() << endl;
+        }
+        
+        Receipt << "SUBTOTAL:" << calculateTotalPrice(cart_items) << endl;
+        Receipt << "HST:" << (calculateTotalPrice(cart_items)*0.13) << endl;
+        Receipt << "TOTAL:" << (calculateTotalPrice(cart_items)*1.13) << endl;
+
+
+    }
+
 }
