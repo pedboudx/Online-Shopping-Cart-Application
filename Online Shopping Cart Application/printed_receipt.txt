@@ -1,6 +1,6 @@
 ItemPrice
+Silver Cutlery Set29.99
 Stainless Steel Cutlery Set14.99
-Toaster39.99
-SUBTOTAL:54.98
-HST:7.1474
-TOTAL:62.1274
+SUBTOTAL:44.98
+HST:5.8474
+TOTAL:50.8274

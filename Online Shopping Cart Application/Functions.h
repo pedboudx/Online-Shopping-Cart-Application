@@ -106,3 +106,21 @@ void printReceipt(vector<Item*> &cart_items)
     }
 
 }
+
+void RemoveFromCart(vector<Item*>& cart_items) {
+    int item_index;
+
+    do {
+        cout << "Enter the index of the item you want to remove from the cart: ";
+        cin >> item_index;
+
+        if (item_index >= 1 && item_index <= cart_items.size()) {
+            // Remove the item from the cart
+            cout << "Removing item \"" << cart_items[item_index - 1]->getName() << "\" from the cart." << endl;
+            cart_items.erase(cart_items.begin() + item_index - 1);
+            return; // Exit the function after successful removal
+        } else {
+            cout << "Invalid item index. Please enter a number between 1 and " << cart_items.size() << ". Try again." << endl;
+        }
+    } while (true);
+}
