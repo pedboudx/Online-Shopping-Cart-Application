@@ -1,6 +1,9 @@
 #pragma once
 #include <iostream>
 #include "Item.h"
+#include "Appliance.h"
+#include "CutleryKit.h"
+#include "DishSet.h"
 #include <vector>
 #include <string>
 #include <iomanip>
@@ -11,8 +14,7 @@ using namespace std;
 vector<Item *> createShop()
 {
 
-    cout << endl
-         << "List of Shop Items for Sale: " << endl;
+    
 
     vector<Item *> available_items;
 
@@ -91,16 +93,16 @@ void printReceipt(vector<Item*> &cart_items)
     } 
     else 
     {
-        Receipt << "Item" << "Price" << endl;
+        Receipt << "Price:\t" << "Item:" << endl;
 
         for (const auto &item : cart_items) 
         {
-            Receipt << item->getName() << item->getPrice() << endl;
+            Receipt << item->getPrice() << "\t" << item->getName() << endl;
         }
         
-        Receipt << "SUBTOTAL:" << calculateTotalPrice(cart_items) << endl;
-        Receipt << "HST:" << (calculateTotalPrice(cart_items)*0.13) << endl;
-        Receipt << "TOTAL:" << (calculateTotalPrice(cart_items)*1.13) << endl;
+        Receipt << "\nSUBTOTAL:    $" << fixed << setprecision(2) << calculateTotalPrice(cart_items) << endl;
+        Receipt << "HST:         $" << fixed << setprecision(2) << (calculateTotalPrice(cart_items)*0.13) << endl;
+        Receipt << "TOTAL:       $" << fixed << setprecision(2) <<(calculateTotalPrice(cart_items)*1.13) << endl;
 
 
     }
