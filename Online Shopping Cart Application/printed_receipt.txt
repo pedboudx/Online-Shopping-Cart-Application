@@ -1,8 +1,9 @@
 Price:	Item:
-99.99	Platinum Dinnerware Set
+14.99	Stainless Steel Cutlery Set
 49.99	Gold Plated Cutlery Set
 29.99	Blender
+69.99	Porcelain Dinnerware Set
 
-SUBTOTAL:    $179.97
-HST:         $23.40
-TOTAL:       $203.37
+SUBTOTAL:    $164.96
+HST:         $21.44
+TOTAL:       $186.40

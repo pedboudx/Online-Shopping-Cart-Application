@@ -55,10 +55,8 @@ public:
 		price = _price;
 	}
 
-	virtual void print()
-	{
-		cout << "Item Name: " << name << "\nPrice: " << price << endl;
-	}
+	virtual void print() = 0;
+	
 };
 
 
