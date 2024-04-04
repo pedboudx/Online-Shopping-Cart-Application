@@ -14,8 +14,6 @@ using namespace std;
 vector<Item *> createShop()
 {
 
-    
-
     vector<Item *> available_items;
 
     // Hardcode Shop Items under here:
@@ -83,45 +81,48 @@ void showReceipt(vector<Item *> &cart_items)
     cout << setprecision(4) << "\nTOTAL: " << calculateTotalPrice(cart_items) * 1.13 << "\n\n";
 }
 
-void printReceipt(vector<Item*> &cart_items) 
+void printReceipt(vector<Item *> &cart_items)
 {
     ofstream Receipt("printed_receipt.txt");
 
     if (!Receipt)
     {
         cout << "printReceipt function broken.\n";
-    } 
-    else 
+    }
+    else
     {
-        Receipt << "Price:\t" << "Item:" << endl;
+        Receipt << "Price:\t"
+                << "Item:" << endl;
 
-        for (const auto &item : cart_items) 
+        for (const auto &item : cart_items)
         {
             Receipt << item->getPrice() << "\t" << item->getName() << endl;
         }
-        
+
         Receipt << "\nSUBTOTAL:    $" << fixed << setprecision(2) << calculateTotalPrice(cart_items) << endl;
-        Receipt << "HST:         $" << fixed << setprecision(2) << (calculateTotalPrice(cart_items)*0.13) << endl;
-        Receipt << "TOTAL:       $" << fixed << setprecision(2) <<(calculateTotalPrice(cart_items)*1.13) << endl;
-
-
+        Receipt << "HST:         $" << fixed << setprecision(2) << (calculateTotalPrice(cart_items) * 0.13) << endl;
+        Receipt << "TOTAL:       $" << fixed << setprecision(2) << (calculateTotalPrice(cart_items) * 1.13) << endl;
     }
-
 }
 
-void RemoveFromCart(vector<Item*>& cart_items) {
+void RemoveFromCart(vector<Item *> &cart_items)
+{
     int item_index;
 
-    do {
+    do
+    {
         cout << "Enter the index of the item you want to remove from the cart: ";
         cin >> item_index;
 
-        if (item_index >= 1 && item_index <= cart_items.size()) {
+        if (item_index >= 1 && item_index <= cart_items.size())
+        {
             // Remove the item from the cart
             cout << "Removing item \"" << cart_items[item_index - 1]->getName() << "\" from the cart." << endl;
             cart_items.erase(cart_items.begin() + item_index - 1);
             return; // Exit the function after successful removal
-        } else {
+        }
+        else
+        {
             cout << "Invalid item index. Please enter a number between 1 and " << cart_items.size() << ". Try again." << endl;
         }
     } while (true);
