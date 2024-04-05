@@ -13,11 +13,11 @@ public:
 		type = "";
 	}
 
-	Appliance(string _name, double _price, string _colour, string _description)
+	Appliance(string _name, double _price, string _type, string _description)
 	{
 		setName(_name);
 		setPrice(_price);
-		type = _colour;
+		type = _type;
 		setDescription(_description);
 	}
 
