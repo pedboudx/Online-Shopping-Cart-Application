@@ -20,8 +20,8 @@ int main()
     }
     else if (proceed_choice == 'Y')
     {
-        vector<Item*> available_items = createShop();
-        vector<Item*> cart_items;
+        vector<Item *> available_items = createShop();
+        vector<Item *> cart_items;
 
         int user_action;
         char go_to_cart = ' ';
