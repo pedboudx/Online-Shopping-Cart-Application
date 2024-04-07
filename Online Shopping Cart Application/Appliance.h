@@ -1,38 +1,44 @@
 #pragma once
-#include <iostream>
-#include "Item.h"
+#include <iostream> 
+#include "Item.h"   
 
+// Creating Appliance class inheriting from the class Item
 class Appliance : public Item
 {
 private:
-	string type;
+   string type; // Type of the appliance
 
 public:
-	Appliance()
-	{
-		type = "";
-	}
+   // Default constructor
+   Appliance()
+   {
+       type = "";
+   }
 
-	Appliance(string _name, double _price, string _type, string _description)
-	{
-		setName(_name);
-		setPrice(_price);
-		type = _type;
-		setDescription(_description);
-	}
+   // Overloaded Constructor
+   Appliance(string _name, double _price, string _colour, string _description)
+   {
+       setName(_name);         // Set the name of the appliance
+       setPrice(_price);       // Set the price of the appliance
+       type = _colour;         // Set the type of the appliance
+       setDescription(_description); // Set the description of the appliance
+   }
 
-	void setType(string _type)
-	{
-		type = _type;
-	}
+   // Mutator function to set the type of the appliance
+   void setType(string _type)
+   {
+       type = _type;
+   }
 
-	string getType()
-	{
-		return type;
-	}
+   // Accessor function to retrieve the type of the appliance
+   string getType()
+   {
+       return type;
+   }
 
-	void print() override
-	{
-		cout << "Item Name: " << getName() << "\nPrice: " << getPrice() << "\nType: " << type << endl;
-	}
+   // Overridden function to print details of the appliance
+   void print() override
+   {
+       cout << "Item Name: " << getName() << "\nPrice: " << getPrice() << "\nType: " << type << endl;
+   }
 };
