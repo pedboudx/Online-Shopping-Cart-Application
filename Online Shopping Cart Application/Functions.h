@@ -18,17 +18,18 @@ vector<Item*> createShop()
    vector<Item*> available_items;
 
    // List of Product Catalouge with their descriptions
-   available_items.push_back(new CutleryKit("Silver Cutlery Set", 29.99, "Silver", "Shiny, silvery, idk descirption here"));
-   available_items.push_back(new CutleryKit("Stainless Steel Cutlery Set", 14.99, "Grey", "ADD DESCRIPTION HERE"));
-   available_items.push_back(new CutleryKit("Gold Plated Cutlery Set", 49.99, "Gold", "ADD DESCRIPTION HERE"));
-   available_items.push_back(new Appliance("Toaster", 39.99, "White", "ADD DESCRIPTION HERE"));
-   available_items.push_back(new Appliance("Blender", 29.99, "Black", "ADD DESCRIPTION HERE"));
-   available_items.push_back(new Appliance("Coffee Maker", 59.99, "Black", "ADD DESCRIPTION HERE"));
-   available_items.push_back(new Appliance("Microwave", 39.99, "White", "ADD DESCRIPTION HERE"));
-   available_items.push_back(new DishSet("Porcelain Dinnerware Set", 69.99, "Porcelain", "ADD DESCRIPTION HERE"));
-   available_items.push_back(new DishSet("Stoneware Dinnerware Set", 49.99, "Stone", "ADD DESCRIPTION HERE"));
-   available_items.push_back(new DishSet("Platinum Dinnerware Set", 99.99, "Platinum", "ADD DESCRIPTION HERE"));
-   available_items.push_back(new DishSet("Golden Dinnerware Set", 79.99, "Gold", "ADD DESCRIPTION HERE"));
+   available_items.push_back(new CutleryKit("Silver Cutlery Set", 29.99, "Silver", "Exuding elegance, our Silver Cutlery Set is crafted from premium silver, adding sophistication to your dining experience."));
+   available_items.push_back(new CutleryKit("Stainless Steel Cutlery Set", 14.99, "Grey", "Our Stainless Steel Cutlery Set, made from durable stainless steel, combines modern style and functionality for everyday use."));
+   available_items.push_back(new CutleryKit("Gold Plated Cutlery Set", 49.99, "Gold", "Indulge in luxury with our Gold Plated Cutlery Set, crafted with exquisite detail and featuring a lavish gold finish."));
+   available_items.push_back(new Appliance("Toaster", 39.99, "White", "Our sleek Toaster, made from high-quality materials, offers versatile toasting options for your morning routine."));
+   available_items.push_back(new Appliance("Blender", 29.99, "Black", "Effortlessly create delicious blends with our powerful Blender, designed with a modern black finish for a stylish addition to your kitchen."));
+   available_items.push_back(new Appliance("Coffee Maker", 59.99, "Black", "Brew perfect cups of coffee with our Coffee Maker, crafted with precision and featuring a sleek black design."));
+   available_items.push_back(new Appliance("Microwave", 39.99, "White", "Conveniently heat up meals with our Microwave, made from durable materials and designed for easy use in any kitchen."));
+   available_items.push_back(new DishSet("Porcelain Dinnerware Set", 69.99, "Porcelain", "Elevate your table with our Porcelain Dinnerware Set, crafted from fine porcelain for timeless elegance."));
+   available_items.push_back(new DishSet("Stoneware Dinnerware Set", 49.99, "Stone", "Add rustic charm to your meals with our Stoneware Dinnerware Set, made from durable stoneware for lasting quality."));
+   available_items.push_back(new DishSet("Platinum Dinnerware Set", 99.99, "Platinum", "Dine in luxury with our Platinum Dinnerware Set, featuring stunning platinum accents and crafted for exquisite dining experiences."));
+   available_items.push_back(new DishSet("Golden Dinnerware Set", 79.99, "Gold", "Make a statement with our Golden Dinnerware Set, designed with opulent gold detailing for unforgettable dining occasions."));
+
 
    return available_items; // returns vector of available items
 }
