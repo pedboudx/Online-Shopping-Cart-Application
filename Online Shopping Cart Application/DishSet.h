@@ -1,38 +1,44 @@
 #pragma once
-#include <iostream>
-#include "Item.h"
+#include <iostream> 
+#include "Item.h"   
 
+// Creating Child Class called DishSet class inheriting from the class Item
 class DishSet : public Item
 {
 private:
-	string material;
+   string material; // Material of the dish set
 
 public:
-	DishSet() //default constructor
-	{
-		material = "";
-	}
+   // Default constructor initializing member variables
+   DishSet()
+   {
+       material = "";
+   }
 
-	DishSet(string _name, double _price, string _material, string _description)// value assigning constructor
-	{
-		setName(_name);
-		setPrice(_price);
-		material = _material; // New detail
-		setDescription(_description);
-	}
+   // Overloaded Constructor
+   DishSet(string _name, double _price, string _material, string _description)
+   {
+       setName(_name);         // Set the name of the dish set
+       setPrice(_price);       // Set the price of the dish set
+       material = _material;   // Set the material of the dish set
+       setDescription(_description); // Set the description of the dish set
+   }
 
-	void setMaterial(string _material) //Mutator
-	{
-		material = _material;
-	}
+   // Mutator function that sets the material of the dish set
+   void setMaterial(string _material)
+   {
+       material = _material;
+   }
 
-	string getMaterial() //Accessor
-	{
-		return material;
-	}
+   // Accessor function to retrieve the material of the dish set
+   string getMaterial()
+   {
+       return material;
+   }
 
-	void print() override               //print override function
-	{
-		cout << "Item Name: " << getName() << "\nPrice: " << getPrice() << "\nMaterial: " << material << endl;
-	}
+   // Overridden function to print details of the dish set
+   void print() override
+   {
+       cout << "Item Name: " << getName() << "\nPrice: " << getPrice() << "\nMaterial: " << material << endl;
+   }
 };
