@@ -8,30 +8,30 @@ private:
 	string material;
 
 public:
-	DishSet()
+	DishSet() //default constructor
 	{
 		material = "";
 	}
 
-	DishSet(string _name, double _price, string _material, string _description)
+	DishSet(string _name, double _price, string _material, string _description)// value assigning constructor
 	{
 		setName(_name);
 		setPrice(_price);
-		material = _material;
+		material = _material; // New detail
 		setDescription(_description);
 	}
 
-	void setMaterial(string _material)
+	void setMaterial(string _material) //Mutator
 	{
 		material = _material;
 	}
 
-	string getMaterial()
+	string getMaterial() //Accessor
 	{
 		return material;
 	}
 
-	void print() override
+	void print() override               //print override function
 	{
 		cout << "Item Name: " << getName() << "\nPrice: " << getPrice() << "\nMaterial: " << material << endl;
 	}
