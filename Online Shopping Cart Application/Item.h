@@ -11,28 +11,24 @@ private:
 	string description;
 
 public:
-	Item()
+	Item() //default constructor
 	{
 		name = "";
 		price = 0;
 		description = "";
 	}
 
-	Item(string _name, double _price, string _description)
+	Item(string _name, double _price, string _description) // values assigning constructor
 	{
 		name = _name;
 		price = _price;
 		description = _description;
 	}
 
+    //Accessors
 	string getDescription()
 	{
 		return description;
-	}
-
-	void setDescription(string _description)
-	{
-		description = _description;
 	}
 
 	string getName()
@@ -45,6 +41,12 @@ public:
 		return price;
 	}
 
+    //Mutators
+	void setDescription(string _description)
+	{
+		description = _description;
+	}
+
 	void setName(string _name)
 	{
 		name = _name;
@@ -55,5 +57,6 @@ public:
 		price = _price;
 	}
 
+    //virtual print function
 	virtual void print() = 0;
 };
