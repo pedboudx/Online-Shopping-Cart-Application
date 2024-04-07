@@ -1,38 +1,44 @@
 #pragma once
-#include <iostream>
-#include "Item.h"
+#include <iostream> 
+#include "Item.h"   
 
+// Creating CutleryKit class inheriting from the class Item
 class CutleryKit : public Item
 {
 private:
-	string colour;
+   string colour; // Colour of the cutlery kit
 
 public:
-	CutleryKit()
-	{
-		colour = "";
-	}
+   // Default constructor
+   CutleryKit()
+   {
+       colour = "";
+   }
 
-	CutleryKit(string _name, double _price, string _colour, string _description)
-	{
-		setName(_name);
-		setPrice(_price);
-		colour = _colour;
-		setDescription(_description);
-	}
+   // Overloaded Constructor
+   CutleryKit(string _name, double _price, string _colour, string _description)
+   {
+       setName(_name);         // Set the name of the cutlery kit
+       setPrice(_price);       // Set the price of the cutlery kit
+       colour = _colour;       // Set the colour of the cutlery kit
+       setDescription(_description); // Set the description of the cutlery kit
+   }
 
-	void setColour(string _colour)
-	{
-		colour = _colour;
-	}
+   // Mutator function to set the colour of the cutlery kit
+   void setColour(string _colour)
+   {
+       colour = _colour;
+   }
 
-	string getColour()
-	{
-		return colour;
-	}
+   // Accessor function to retrieve the colour of the cutlery kit
+   string getColour()
+   {
+       return colour;
+   }
 
-	void print() override
-	{
-		cout << "Item Name: " << getName() << "\nPrice: " << getPrice() << "\nColour: " << colour << endl;
-	}
+   // Overridden function to print details of the cutlery kit
+   void print() override
+   {
+       cout << "Item Name: " << getName() << "\nPrice: " << getPrice() << "\nColour: " << colour << endl;
+   }
 };
